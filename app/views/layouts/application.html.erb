@@ -8,8 +8,17 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
   <body>
+    <nav>
+      <% if current_user %>
+        <h2>Welcome, <%= current_user.username %>!</h2>
+        <h2><%= link_to "Log Out", logout_path %>
+      <% else %>
+        <h2>Welcome!</h2>
+        <h2><%= link_to "Sign Up to Be a User", new_user_path %></h2>
+        <h2><%= link_to "User Log In", login_path %></h2>
+      <% end %>
+    </nav>
     <%= yield %>
   </body>
 </html>
