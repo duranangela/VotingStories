@@ -15,7 +15,7 @@ describe 'registration process' do
 
     click_on 'Create User'
 
-    expect(current_path).to eq(user_path(User.last))
-    expect(page).to have_content("Welcome, #{username}")
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content("Welcome")
   end
 end
