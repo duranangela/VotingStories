@@ -15,9 +15,10 @@
   </div>
 
   <div class='favorites'>
-  
+    <button class="faves-button">Save Favorites</button>
   </div>
 </section>
 
 
 <%= javascript_include_tag "application.js" %>
+<%= javascript_tag "var current_user_id = #{current_user.id}" %>
