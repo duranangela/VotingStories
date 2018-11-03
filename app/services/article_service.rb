@@ -6,7 +6,12 @@ class ArticleService
   end
 
   def articles
-    JSON.parse(response.body, symbolize_names: true)[:articles]
+    articles = JSON.parse(response.body, symbolize_names: true)[:articles]
+    articles = articles.map do |article|
+      article = [article[:title], article[:source][:name], article[:url]]
+      article
+    end
+    articles
   end
 
   def response
