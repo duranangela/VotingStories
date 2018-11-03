@@ -1,9 +1,12 @@
 <section>
   <div class="articles">
-    <% @articles.each do |article| %>
-      <div class="article">
-        <p><%= article.title %></p>
-      </div>
-    <% end %>
+    <p>All Articles</p>
+    <div class='article'>
+      <% @presenter.each do |article| %>
+        <p><%= article[:title] %></p>
+        <p><%= article[:source][:name] %></p>
+        <br>
+      <% end %>
+    </div>
   </div>
 </section>
