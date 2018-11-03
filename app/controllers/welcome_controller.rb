@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
   def index
-    @presenter = ArticlePresenter.new.all_articles
+    @presenter = ArticleService.new
   end
 
 end

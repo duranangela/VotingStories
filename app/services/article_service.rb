@@ -1,3 +1,5 @@
+require 'date'
+
 class ArticleService
 
   def initialize
@@ -8,7 +10,20 @@ class ArticleService
   end
 
   def response
-    Faraday.get("https://newsapi.org/v2/everything?q=voting&sortBy=publishedAt&apiKey=eafc95e0454f42c78cbb5b3c4c31cc3d&from=2018-10-23")
+    Faraday.get("https://newsapi.org/v2/everything", params)
+  end
+
+  def params
+    {
+      q: 'Trump AND vote AND gerrymander AND election',
+      sortBy: 'publishedAt',
+      from: date,
+      apiKey: 'eafc95e0454f42c78cbb5b3c4c31cc3d'
+    }
+  end
+
+  def date
+    Date.today - 3
   end
 
 end
