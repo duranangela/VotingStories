@@ -1,10 +1,10 @@
 <section>
+  <p>All Articles</p>
   <div class="articles">
-    <p>All Articles</p>
     <div class='article'>
       <% @presenter.articles.each do |article| %>
         <% if current_user %>
-          <p><input type="checkbox"><%= article[:title] %></p>
+          <p><%= check_box_tag 'title', article %><%= article[:title] %></p>
         <% else %>
           <p><%= article[:title] %></p>
         <% end %>
@@ -13,4 +13,9 @@
       <% end %>
     </div>
   </div>
+
+  <div class='favorites'></div>
 </section>
+
+
+<%= javascript_include_tag "application.js" %>
