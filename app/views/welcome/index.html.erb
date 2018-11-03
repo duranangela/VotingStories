@@ -4,7 +4,7 @@
     <div class='article'>
       <% @presenter.articles.each do |article| %>
         <% if current_user %>
-          <p><%= check_box_tag 'title', article %><%= article[0] %></p>
+          <p><%= check_box_tag "title", ["#{article[0]}", "#{article[1]}", "#{article[2]}"]%><%= article[0] %></p>
         <% else %>
           <p><%= article[0] %></p>
         <% end %>
@@ -21,4 +21,6 @@
 
 
 <%= javascript_include_tag "application.js" %>
-<%= javascript_tag "var current_user_id = #{current_user.id}" %>
+<% if current_user %>
+  <%= javascript_tag "var current_user_id = #{current_user.id}" %>
+<% end %>
