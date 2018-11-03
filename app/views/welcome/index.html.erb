@@ -4,7 +4,7 @@
     <div class='article'>
       <% @presenter.articles.each do |article| %>
         <% if current_user %>
-          <p><%= check_box_tag "title", ["#{article[0]}", "#{article[1]}", "#{article[2]}"]%><%= article[0] %></p>
+          <p><%= check_box_tag "title", (["#{article[0]}" + '-&-' + "#{article[1]}" + '-&-' + "#{article[2]}"])%><%= article[0] %></p>
         <% else %>
           <p><%= article[0] %></p>
         <% end %>
