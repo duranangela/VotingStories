@@ -1,7 +1,7 @@
 class Api::V1::Users::FavoritesController < ActionController::API
 
   def create
-    fave = Favorite.find_by_url(fave_params[:url])
+    fave = Favorite.find_by(url: fave_params[:url], user_id: params[:user_id])
     if fave.nil?
       user = User.find(params[:user_id])
       favorite = user.favorites.create(fave_params)
