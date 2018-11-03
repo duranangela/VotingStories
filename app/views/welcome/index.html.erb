@@ -4,17 +4,19 @@
     <div class='article'>
       <% @presenter.articles.each do |article| %>
         <% if current_user %>
-          <p><%= check_box_tag 'title', article %><%= article[:title] %></p>
+          <p><%= check_box_tag 'title', article %><%= article[0] %></p>
         <% else %>
-          <p><%= article[:title] %></p>
+          <p><%= article[0] %></p>
         <% end %>
-        <p><%= link_to article[:source][:name], article[:url] %></p>
+        <p><%= link_to article[1], article[2] %></p>
         <br>
       <% end %>
     </div>
   </div>
 
-  <div class='favorites'></div>
+  <div class='favorites'>
+  
+  </div>
 </section>
 
 
