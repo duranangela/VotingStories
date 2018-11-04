@@ -4,6 +4,7 @@ class CreateFavorites < ActiveRecord::Migration[5.2]
       t.text :title
       t.string :source
       t.string :url
+      t.references :user, foreign_key: :true
 
       t.timestamps
     end
