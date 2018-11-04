@@ -1,4 +1,4 @@
-class Api::V1::Users::FavoritesController < ActionController::API
+class Api::V1::Users::FavoritesController < ApiBaseController
 
   def create
     fave = Favorite.find_by(url: fave_params[:url], user_id: params[:user_id])
@@ -13,6 +13,11 @@ class Api::V1::Users::FavoritesController < ActionController::API
     else
       render json: {message: "Favorite already exists"}
     end
+  end
+
+  def destroy
+    fave = Favorite.find(params[:id])
+    fave.destroy
   end
 
   private

@@ -1,6 +1,22 @@
+<%= link_to 'Back to All Articles', root_path %>
 <h1>Favorites</h1>
 
-<% @favorites.each do |fave| %>
-  <%=  fave.title %>
-  <br>
+<div class='articles'>
+  <% @favorites.each do |fave| %>
+    <p><%= check_box_tag "fave", fave.id %><%= fave.title %></p>
+    <p><%= link_to fave.source, fave.url %></p>
+    <br>
+  <% end %>
+</div>
+
+<div class='button'>
+  <% if @favorites != [] %>
+    <button class="delete-button">Delete Selections From Favorites</button>
+  <% end %>
+</div>
+
+
+<%= javascript_include_tag "application.js" %>
+<% if current_user %>
+  <%= javascript_tag "var current_user_id = #{current_user.id}" %>
 <% end %>

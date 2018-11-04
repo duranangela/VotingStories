@@ -18,7 +18,9 @@
   </div>
 
   <div class='favorites'>
-    <button class="faves-button">Save Favorites</button>
+    <% if current_user %>
+      <button class="faves-button">Save Favorites</button>
+    <% end %>
   </div>
 </section>
 
