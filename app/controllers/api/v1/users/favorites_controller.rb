@@ -18,6 +18,7 @@ class Api::V1::Users::FavoritesController < ActionController::API
   def destroy
     fave = Favorite.find(params[:id])
     fave.destroy
+    render json: {message: "Favorite successfully deleted"}
   end
 
   private
