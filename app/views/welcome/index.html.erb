@@ -1,8 +1,11 @@
-<section>
-  <% if current_user %>
-    <h2><%= link_to "See Favorites", user_favorites_path(current_user) %></h2>
-  <% end %>
-  <p>All Articles</p>
+<section class='main-page'>
+  <div class='heading'>
+    <div><h2 class="heading-left">All Articles</h2>
+    <h3>Newest Articles at the Top - Scroll to See More</h3></div>
+    <% if current_user %>
+      <h3 class="heading-right"><%= link_to "Go to Favorites", user_favorites_path(current_user) %></h3>
+    <% end %>
+  </div>
   <div class="articles">
     <div class='article'>
       <% @presenter.articles.each do |article| %>
@@ -17,9 +20,9 @@
     </div>
   </div>
 
-  <div class='favorites'>
+  <div class='button'>
     <% if current_user %>
-      <button class="faves-button">Save Favorites</button>
+      <p class="faves-button"><%= link_to "Save Favorites", user_favorites_path(current_user)%></p>
     <% end %>
   </div>
 </section>
