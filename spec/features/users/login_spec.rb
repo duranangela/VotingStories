@@ -11,7 +11,7 @@ describe 'login process' do
     fill_in :username, with: user.username
     fill_in :password, with: user.password
 
-    click_on 'Log In'
+    click_on 'User Log In'
 
     expect(current_path).to eq(root_path)
     expect(page).to have_content("Welcome")
@@ -27,7 +27,7 @@ describe 'login process' do
     fill_in :username, with: user.username
     fill_in :password, with: user.password
 
-    click_on 'Log In'
+    click_on 'User Log In'
     click_on 'Log Out'
 
     expect(current_path).to eq(root_path)

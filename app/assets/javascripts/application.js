@@ -1,9 +1,9 @@
 let faves = [];
 let delFaves = [];
 
-$('input[name=title]').change(function(){
+$('input[id=title]').change(function(){
   faves = [];
-  $('input[name=title]:checked').each(function(){
+  $('input[id=title]:checked').each(function(){
       data = (this.value).split("-&-")
       faves.push(data);
   }).get();

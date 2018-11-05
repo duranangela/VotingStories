@@ -1,20 +1,35 @@
-<%= link_to 'Back to All Articles', root_path %>
-<h1>Favorites</h1>
+<section class='faves-page'>
+  <div class='heading'>
+    <div><h2 class="heading-left">Favorites</h2></div>
+    <div class="heading-right"><h3 ><%= link_to 'Back to All Articles', root_path %></h3></div>
+  </div>
 
-<div class='articles'>
-  <% @favorites.each do |fave| %>
-    <p><%= check_box_tag "fave", fave.id %><%= fave.title %></p>
-    <p><%= link_to fave.source, fave.url %></p>
-    <br>
-  <% end %>
-</div>
-
-<div class='button'>
   <% if @favorites != [] %>
-    <button class="delete-button">Delete Selections From Favorites</button>
+    <div class='articles'>
+      <% @favorites.each do |fave| %>
+        <label class='trash'>
+          <input id="fave", name="fave", type="checkbox", value="<%= fave.id %>", class='faves-checks'/>
+          <!-- <p><%= check_box_tag "fave", fave.id %><%= fave.title %></p> -->
+          <i class="fas fa-trash-alt checked"></i>
+          <i class="far fa-trash-alt unchecked"></i>
+          <%= fave.title %>
+        </label>
+        <p><%= link_to fave.source, fave.url %></p>
+        <br>
+      <% end %>
+    </div>
+  <% else %>
+    <div class='no-faves'>
+      <h2>You haven't selected any favorites!</h2>
+    </div>
   <% end %>
-</div>
 
+  <div class='button'>
+    <% if @favorites != [] %>
+      <button class="delete-button">Delete Selections From Favorites</button>
+    <% end %>
+  </div>
+</section>
 
 <%= javascript_include_tag "application.js" %>
 <% if current_user %>
