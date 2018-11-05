@@ -7,7 +7,13 @@
   <% if @favorites != [] %>
     <div class='articles'>
       <% @favorites.each do |fave| %>
-        <p><%= check_box_tag "fave", fave.id %><%= fave.title %></p>
+        <label class='trash'>
+          <input id="fave", name="fave", type="checkbox", value="<%= fave.id %>", class='faves-checks'/>
+          <!-- <p><%= check_box_tag "fave", fave.id %><%= fave.title %></p> -->
+          <i class="fas fa-trash-alt checked"></i>
+          <i class="far fa-trash-alt unchecked"></i>
+          <%= fave.title %>
+        </label>
         <p><%= link_to fave.source, fave.url %></p>
         <br>
       <% end %>

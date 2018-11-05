@@ -1,7 +1,11 @@
 <section class='main-page'>
   <div class='heading'>
-    <div><h2 class="heading-left">All Articles</h2>
-    <h3>Newest Articles at the Top - Scroll to See More</h3></div>
+    <div><h2 class="heading-left">Articles From the Last 3 Days</h2>
+    <h3>Newest Articles at the Top - Scroll to See More</h3>
+    <% if current_user %>
+      <h3>Star the Articles You Want to Save for Later, and Then Click "Save Favorites"</h3>
+    <% end %>
+    </div>
     <% if current_user %>
       <h3 class="heading-right"><%= link_to "Go to Favorites", user_favorites_path(current_user) %></h3>
     <% end %>
@@ -10,7 +14,12 @@
     <div class='article'>
       <% @presenter.articles.each do |article| %>
         <% if current_user %>
-          <p><%= check_box_tag "title", (["#{article[0]}" + '-&-' + "#{article[1]}" + '-&-' + "#{article[2]}"])%><%= article[0] %></p>
+          <label class='stars'>
+            <input id="title", type="checkbox", value="<%= article[0] %>-&-<%= article[1] %>-&-<%= article[2] %>", class="article-checks"/>
+            <i class="fas fa-star checked"></i>
+            <i class="far fa-star unchecked"></i>
+            <!-- <%= check_box_tag "title", (["#{article[0]}" + '-&-' + "#{article[1]}" + '-&-' + "#{article[2]}"])%><%= article[0] %> -->
+          <%= article[0] %></label>
         <% else %>
           <p><%= article[0] %></p>
         <% end %>
