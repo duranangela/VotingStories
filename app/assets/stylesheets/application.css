@@ -5,7 +5,7 @@ body {
   background-size: cover;
   display: grid;
   grid-template-rows: auto auto auto;
-  padding-bottom: 100px;
+  padding-bottom: 20px;
 }
 
 nav {
@@ -21,6 +21,21 @@ h1 {
   font-size: 40px;
   font-style: italic;
   color: white;
+}
+
+h1 a:link {
+  color: white;
+  text-decoration: none;
+}
+
+h1 a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+h1 a:hover {
+  color: red;
+  text-decoration: none;
 }
 
 .main-title h2 {
@@ -166,8 +181,7 @@ input.faves-checks:checked ~ .unchecked {
 }
 
 .faves-button a:hover {
-  background-color: lightgreen;
-  color: white;
+  color: lightgreen;
   text-decoration: none;
 }
 
@@ -177,4 +191,31 @@ input.faves-checks:checked ~ .unchecked {
   background-color: red;
   border-radius: 5px;
   font-size: 20px;
+}
+
+
+footer {
+  margin-top: 20px;
+  border: 1px solid black;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+footer h3 {
+  color: white;
+  text-align: center;
+}
+
+footer a:link {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: red;
+  text-decoration: none;
 }
