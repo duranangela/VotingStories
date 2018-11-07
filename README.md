@@ -38,8 +38,7 @@ Submission should be in the following format:
 <img width="1163" alt="screen shot 2018-11-07 at 7 30 30 am" src="https://user-images.githubusercontent.com/35884097/48137393-342dfe00-e25f-11e8-9b1d-0ec9f1642c2f.png">
 
 #### Favorites Page
-
-
+<img width="1164" alt="screen shot 2018-11-07 at 7 33 16 am" src="https://user-images.githubusercontent.com/35884097/48137517-80793e00-e25f-11e8-990f-30e983d1f00b.png">
 
 
 
