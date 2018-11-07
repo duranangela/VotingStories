@@ -23,7 +23,7 @@ class ArticleService
       q: 'Trump AND vote AND gerrymander AND election',
       sortBy: 'publishedAt',
       from: date,
-      apiKey: 'eafc95e0454f42c78cbb5b3c4c31cc3d'
+      apiKey: ENV['API_KEY']
     }
   end
 
