@@ -34,7 +34,10 @@ Submission should be in the following format:
 
 ### Screenshots
 
+#### Home Page
+<img width="1163" alt="screen shot 2018-11-07 at 7 30 30 am" src="https://user-images.githubusercontent.com/35884097/48137393-342dfe00-e25f-11e8-9b1d-0ec9f1642c2f.png">
 
+#### Favorites Page
 
 
 
