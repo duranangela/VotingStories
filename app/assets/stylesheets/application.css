@@ -4,7 +4,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   display: grid;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto auto;
   padding-bottom: 100px;
 }
 
